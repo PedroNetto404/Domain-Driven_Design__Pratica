@@ -1,6 +1,7 @@
 using DDDPratica.Catalogo.Domain.Produto.ObjetosDeValor;
 using DDDPratica.Core.DomainObjects;
 using DDDPratica.Core.DomainObjects.Entidades;
+using DDDPratica.Core.DomainObjects.Exceptions;
 using DDDPratica.Core.DomainObjects.Validações;
 
 namespace DDDPratica.Catalogo.Domain.Produto.Entidades;

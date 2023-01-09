@@ -37,4 +37,9 @@ public abstract class Entidade
     public static bool operator !=(Entidade left, Entidade right) => !(left == right);
 
     public override string ToString() => $"{GetType().Name} [Id={Id}]";
+
+    public virtual bool EhValido()
+    {
+        throw new NotImplementedException(); 
+    }
 }

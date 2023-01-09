@@ -1,4 +1,4 @@
-using DDDPratica.Core.DomainObjects.Eventos;
+using DDDPratica.Core.Mensagens;
 
 namespace DDDPratica.Core.EventBus;
 

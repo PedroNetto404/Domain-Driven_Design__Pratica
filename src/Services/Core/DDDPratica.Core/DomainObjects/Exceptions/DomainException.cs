@@ -1,4 +1,4 @@
-namespace DDDPratica.Core.DomainObjects;
+namespace DDDPratica.Core.DomainObjects.Exceptions;
 
 public class DomainException : Exception
 {

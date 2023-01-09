@@ -5,6 +5,7 @@ using DDDPratica.Catalogo.Domain.Produto;
 using DDDPratica.Catalogo.Domain.Produto.Entidades;
 using DDDPratica.Catalogo.Domain.Servicos;
 using DDDPratica.Core.DomainObjects;
+using DDDPratica.Core.DomainObjects.Exceptions;
 
 namespace DDDPratica.Catalogo.Application.Serviços;
 

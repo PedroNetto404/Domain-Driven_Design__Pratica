@@ -10,14 +10,17 @@ public class CategoriaMap : IEntityTypeConfiguration<Categoria>
     {
         builder.HasKey(c => c.Id);
         
-        builder.Property(c => c.Nome)
+        builder
+            .Property(c => c.Nome)
             .IsRequired()
             .HasColumnType("varchar(250)");
 
         // 1 : N => Categoria : Produtos
-        builder.HasMany(c => c.Produtos)
+        builder
+            .HasMany(c => c.Produtos)
             .WithOne(p => p.Categoria)
             .HasForeignKey(p => p.CategoriaId);
+        
         builder.ToTable("Categorias");
     }
 }

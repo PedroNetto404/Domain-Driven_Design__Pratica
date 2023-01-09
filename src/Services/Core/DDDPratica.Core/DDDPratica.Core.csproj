@@ -7,14 +7,42 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
     <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
       <HintPath>..\..\..\..\..\..\.nuget\packages\microsoft.extensions.configuration.abstractions\7.0.0\lib\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="RegisterServices\**" />
+    <Compile Remove="Bus\**" />
+    <Compile Remove="DomainObjects\Eventos\**" />
+    <Compile Remove="EventBus\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="RegisterServices\**" />
+    <EmbeddedResource Remove="Bus\**" />
+    <EmbeddedResource Remove="DomainObjects\Eventos\**" />
+    <EmbeddedResource Remove="EventBus\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="RegisterServices\**" />
+    <None Remove="Bus\**" />
+    <None Remove="DomainObjects\Eventos\**" />
+    <None Remove="EventBus\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DomainObjects\Commands" />
+    <Folder Include="Mensagens\CommonMessages\IntegrationEvents" />
   </ItemGroup>
 
 </Project>

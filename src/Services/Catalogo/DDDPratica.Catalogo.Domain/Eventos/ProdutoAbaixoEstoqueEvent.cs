@@ -1,6 +1,6 @@
-using DDDPratica.Core.DomainObjects.Eventos;
+using DDDPratica.Core.Mensagens.CommonMessages.DomainEvents;
 
-namespace DDDPratica.Catalogo.Domain.Events;
+namespace DDDPratica.Catalogo.Domain.Eventos;
 
 public class ProdutoAbaixoEstoqueEvent : DomainEvent
 {

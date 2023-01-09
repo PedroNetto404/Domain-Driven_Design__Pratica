@@ -1,4 +1,3 @@
-using DDDPratica.Catalogo.Domain.Events;
 using DDDPratica.Catalogo.Domain.Produto;
 using MediatR;
 

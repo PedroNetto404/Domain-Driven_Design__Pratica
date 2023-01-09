@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using DDDPratica.Core.DomainObjects.Exceptions;
 
 namespace DDDPratica.Core.DomainObjects.Validações;
 

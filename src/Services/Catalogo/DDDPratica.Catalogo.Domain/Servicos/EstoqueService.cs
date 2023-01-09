@@ -1,21 +1,20 @@
-using DDDPratica.Catalogo.Domain.Events;
+using DDDPratica.Catalogo.Domain.Eventos;
 using DDDPratica.Catalogo.Domain.Produto;
-using DDDPratica.Catalogo.Domain.Servicos;
-using DDDPratica.Core;
+using DDDPratica.Core.Communication.Mediator;
 using DDDPratica.Core.EventBus;
 
-namespace DDDPratica.Catalogo.Domain.Services;
+namespace DDDPratica.Catalogo.Domain.Servicos;
 
 public class EstoqueService : IEstoqueService
 {
     private readonly IProdutoRepository _produtoRepository;
-    private readonly IEventHandler _eventBus; 
+    private readonly IMediatorHandler _mediatorHandler; 
 
     public EstoqueService(
         IProdutoRepository produtoRepository,
-        IEventHandler eventHandler)
+        IMediatorHandler mediatorHandler)
     {
-        _eventBus = eventHandler; 
+        _mediatorHandler = mediatorHandler; 
         _produtoRepository = produtoRepository;
     }
 
@@ -30,7 +29,7 @@ public class EstoqueService : IEstoqueService
         produto.DebitarEstoque(quantidade);
 
         if (produto.QuantidadeEstoque < 10) 
-            await _eventBus.PublicarEvento(new ProdutoAbaixoEstoqueEvent(produto.Id, produto.QuantidadeEstoque));
+            await _mediatorHandler.PublicarEvento(new ProdutoAbaixoEstoqueEvent(produto.Id, produto.QuantidadeEstoque));
         
         _produtoRepository.Atualizar(produto);
 

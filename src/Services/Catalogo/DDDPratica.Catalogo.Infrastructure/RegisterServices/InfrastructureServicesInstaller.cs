@@ -13,6 +13,8 @@ public class InfrastructureServicesInstaller : IServicesInstaller
     public void Install(IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IProdutoRepository, ProdutoRepository>();
+        
+        services.AddScoped<CatalogoContext>(); 
         services.AddDbContext<CatalogoContext>(options =>
         {
             options.UseSqlServer(""); 

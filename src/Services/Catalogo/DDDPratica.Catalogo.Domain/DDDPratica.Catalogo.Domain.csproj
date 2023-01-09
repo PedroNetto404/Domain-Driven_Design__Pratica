@@ -12,14 +12,17 @@
 
   <ItemGroup>
     <Compile Remove="Produto\Services\**" />
+    <Compile Remove="RegisterServices\**" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Remove="Produto\Services\**" />
+    <EmbeddedResource Remove="RegisterServices\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Produto\Services\**" />
+    <None Remove="RegisterServices\**" />
   </ItemGroup>
 
   <ItemGroup>

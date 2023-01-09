@@ -1,4 +1,4 @@
-using DDDPratica.Core.DomainObjects.Eventos;
+using DDDPratica.Core.Mensagens;
 using MediatR;
 
 namespace DDDPratica.Core.EventBus;

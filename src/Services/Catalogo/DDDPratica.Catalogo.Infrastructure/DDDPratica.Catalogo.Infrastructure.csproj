@@ -20,10 +20,19 @@
 
     <ItemGroup>
       <Compile Remove="Class1.cs" />
+      <Compile Remove="RegisterServices\**" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\..\tests\DDDPratica.Catalogo.Domain.Tests\DDDPratica.Catalogo.Domain.Tests.csproj" />
+      <ProjectReference Include="..\DDDPratica.Catalogo.Domain\DDDPratica.Catalogo.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="RegisterServices\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="RegisterServices\**" />
     </ItemGroup>
 
 </Project>

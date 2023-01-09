@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Class1.cs" />
+      <Compile Remove="RegisterServices\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Queries" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Core\DDDPratica.Core\DDDPratica.Core.csproj" />
+      <ProjectReference Include="..\DDDPratica.Vendas.Domain\DDDPratica.Vendas.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="RegisterServices\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="RegisterServices\**" />
+    </ItemGroup>
+
+</Project>
