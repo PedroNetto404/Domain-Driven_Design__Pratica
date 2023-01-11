@@ -2,6 +2,8 @@
 using DDDPratica.Core.Mensagens;
 using DDDPratica.Core.Mensagens.CommonMessages.DomainEvents;
 using DDDPratica.Core.Mensagens.CommonMessages.Notifications;
+using DDDPratica.Vendas.Application.Commands.DTO_s;
+using DDDPratica.Vendas.Application.Events;
 using DDDPratica.Vendas.Domain.Pedido.Entidades;
 using DDDPratica.Vendas.Domain.Pedido.Repositories;
 using MediatR;
@@ -49,8 +51,11 @@ public class PedidoCommandHandler : IRequestHandler<AdicionarItemPedidoCommand, 
             {
                 _pedidoRepository.AdicionarItem(pedidoItem);
             }
+
+            pedido.AdicionarEvento(new PedidoAtualizadoEvent(pedido.ClientId, pedido.Id, pedido.ValorTotal));
         }
 
+        pedido.AdicionarEvento(new PedidoItemAdicionadoEvent(pedido.ClientId, pedido.Id, request.ProdutoId, request.Nome, request.ValorUnitario, request.Quantidade));
         return await _pedidoRepository.UnitOfWork.Commit();
     }
 

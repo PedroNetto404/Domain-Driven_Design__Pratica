@@ -1,13 +1,12 @@
-using System.Collections;
 using AutoMapper;
 using DDDPratica.Catalogo.Application.DTO_s;
+using DDDPratica.Catalogo.Application.Serviços;
 using DDDPratica.Catalogo.Domain.Produto;
 using DDDPratica.Catalogo.Domain.Produto.Entidades;
 using DDDPratica.Catalogo.Domain.Servicos;
-using DDDPratica.Core.DomainObjects;
 using DDDPratica.Core.DomainObjects.Exceptions;
 
-namespace DDDPratica.Catalogo.Application.Serviços;
+namespace DDDPratica.Catalogo.Application.Services;
 
 public class ProdutoAppService : IProdutoAppService
 {

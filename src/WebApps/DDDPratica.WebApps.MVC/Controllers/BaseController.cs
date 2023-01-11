@@ -25,9 +25,12 @@ public abstract class BaseController : Controller
         return (!_notificationHandler.TemNotificacao());
     }
 
-    protected IEnumerable<DomainNotification> ObterMensagensErro()
+    protected IEnumerable<string> ObterMensagensErro()
     {
-        return _notificationHandler.ObterNotificacoes();
+        return _notificationHandler
+            .ObterNotificacoes()
+            .Select(c => c.Value)
+            .ToList();
     }
 
     protected void NotificarErro(string codigo, string message)

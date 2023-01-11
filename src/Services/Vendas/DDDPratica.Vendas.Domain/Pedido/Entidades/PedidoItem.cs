@@ -9,6 +9,7 @@ public class PedidoItem : Entidade
     public string ProdutoNome { get; private set; }
     public int Quantidade { get; private set; }
     public decimal ValorUnitario { get; private set; }
+    public decimal ValorTotal => Quantidade * ValorUnitario; 
 
     //EF Relational
     public Pedido Pedido { get; set; }

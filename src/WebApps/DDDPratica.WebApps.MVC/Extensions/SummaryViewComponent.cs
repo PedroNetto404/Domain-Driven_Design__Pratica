@@ -8,7 +8,10 @@ public class SummaryViewComponent : ViewComponent
 {
     private readonly DomainNotificationHandler _notification;
 
-    public SummaryViewComponent(INotificationHandler<DomainNotification> notification)
+    public SummaryViewComponent
+    (
+        INotificationHandler<DomainNotification> notification
+    )
     {
         _notification ??= notification as DomainNotificationHandler;
     }
@@ -22,6 +25,6 @@ public class SummaryViewComponent : ViewComponent
             ViewData.ModelState.AddModelError(string.Empty, notification.Value);
         }
 
-        return View(); 
+        return View();
     }
 }

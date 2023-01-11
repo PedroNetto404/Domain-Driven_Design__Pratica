@@ -20,28 +20,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="RegisterServices\**" />
     <Compile Remove="Bus\**" />
     <Compile Remove="DomainObjects\Eventos\**" />
     <Compile Remove="EventBus\**" />
+    <Compile Remove="DomainObjects\Commands\**" />
+    <Compile Include="RegisterServices\CoreServices.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="RegisterServices\**" />
     <EmbeddedResource Remove="Bus\**" />
     <EmbeddedResource Remove="DomainObjects\Eventos\**" />
     <EmbeddedResource Remove="EventBus\**" />
+    <EmbeddedResource Remove="DomainObjects\Commands\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="RegisterServices\**" />
     <None Remove="Bus\**" />
     <None Remove="DomainObjects\Eventos\**" />
     <None Remove="EventBus\**" />
+    <None Remove="DomainObjects\Commands\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DomainObjects\Commands" />
     <Folder Include="Mensagens\CommonMessages\IntegrationEvents" />
   </ItemGroup>
 

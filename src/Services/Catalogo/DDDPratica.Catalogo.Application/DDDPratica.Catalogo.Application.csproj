@@ -8,7 +8,7 @@
 
     <ItemGroup>
       <Compile Remove="Class1.cs" />
-      <Compile Remove="RegisterServices\**" />
+      <Compile Include="RegisterServices\CatalogoApplicationServices.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -19,14 +19,6 @@
     <ItemGroup>
       <ProjectReference Include="..\DDDPratica.Catalogo.Domain\DDDPratica.Catalogo.Domain.csproj" />
       <ProjectReference Include="..\DDDPratica.Catalogo.Infrastructure\DDDPratica.Catalogo.Infrastructure.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="RegisterServices\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="RegisterServices\**" />
     </ItemGroup>
 
 </Project>

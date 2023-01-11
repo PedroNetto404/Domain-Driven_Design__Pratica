@@ -1,8 +1,7 @@
 ﻿using DDDPratica.Core.Mensagens;
 using FluentValidation;
-using MediatR;
 
-namespace DDDPratica.Vendas.Application.Commands;
+namespace DDDPratica.Vendas.Application.Commands.DTO_s;
 
 public class AdicionarItemPedidoCommand : Command
 {

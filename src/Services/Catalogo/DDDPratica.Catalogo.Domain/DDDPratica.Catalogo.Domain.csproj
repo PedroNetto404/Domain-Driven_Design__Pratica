@@ -12,17 +12,15 @@
 
   <ItemGroup>
     <Compile Remove="Produto\Services\**" />
-    <Compile Remove="RegisterServices\**" />
+    <Compile Include="RegisterServices\CatalogoDomainServices.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Remove="Produto\Services\**" />
-    <EmbeddedResource Remove="RegisterServices\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Produto\Services\**" />
-    <None Remove="RegisterServices\**" />
   </ItemGroup>
 
   <ItemGroup>

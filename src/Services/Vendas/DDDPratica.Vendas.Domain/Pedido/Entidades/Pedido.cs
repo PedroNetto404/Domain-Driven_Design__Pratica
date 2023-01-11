@@ -16,6 +16,7 @@ public class Pedido : Entidade, IRaizAgregacao
     public DateTime DataCadastro { get; private set; }
     public PedidoStatus Status { get; set; }
     public IReadOnlyCollection<PedidoItem> PedidoItems => _pedidoItems;
+    public decimal SubTotal => ValorTotal + Desconto; 
     
     //EF Relational
     public Voucher Voucher { get; private set; }

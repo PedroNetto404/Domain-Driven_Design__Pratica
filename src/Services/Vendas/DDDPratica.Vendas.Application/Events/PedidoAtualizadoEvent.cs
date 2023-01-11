@@ -2,15 +2,17 @@
 
 namespace DDDPratica.Vendas.Application.Events;
 
-public class PedidoRascunhoIniciadoEvent : Event
+public class PedidoAtualizadoEvent : Event
 {
     public Guid ClientId { get; private set; }
     public Guid PedidoId { get; private set; }
+    public decimal ValorTotal { get; private set; }
 
-    public PedidoRascunhoIniciadoEvent(Guid clientId, Guid pedidoId)
+    public PedidoAtualizadoEvent(Guid clientId, Guid pedidoId, decimal valorTotal)
     {
-        AggregateId = pedidoId; 
+        AggregateId = pedidoId;
         ClientId = clientId;
         PedidoId = pedidoId;
+        ValorTotal = valorTotal;
     }
 }

@@ -1,7 +1,6 @@
 using DDDPratica.Catalogo.Domain.Eventos;
 using DDDPratica.Catalogo.Domain.Produto;
 using DDDPratica.Core.Communication.Mediator;
-using DDDPratica.Core.EventBus;
 
 namespace DDDPratica.Catalogo.Domain.Servicos;
 
