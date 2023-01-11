@@ -18,6 +18,13 @@ public class AtualizarItemPedidoCommand : Command
         PedidoId = pedidoId;
         Quantidade = quantidade;
     }
+
+    public override bool EhValido()
+    {
+        ValidationResult = new AtualizarItemPedidoValidation().Validate(this);
+
+        return ValidationResult.IsValid; 
+    }
 }
 
 public class AtualizarItemPedidoValidation : AbstractValidator<AtualizarItemPedidoCommand>
@@ -31,7 +38,11 @@ public class AtualizarItemPedidoValidation : AbstractValidator<AtualizarItemPedi
         RuleFor(c => c.ProdutoId)
             .NotEqual(Guid.Empty)
             .WithMessage("Id do produto inválido");
-
+        
+           RuleFor(c => c.PedidoId)
+            .NotEqual(Guid.Empty)
+            .WithMessage("Id do pedido inválido");
+        
         RuleFor(c => c.Quantidade)
             .GreaterThan(0)
             .WithMessage("A quantidade minima de um item é 1")

@@ -10,7 +10,11 @@ using MediatR;
 
 namespace DDDPratica.Vendas.Application.Commands;
 
-public class PedidoCommandHandler : IRequestHandler<AdicionarItemPedidoCommand, bool>
+public class PedidoCommandHandler :
+    IRequestHandler<AdicionarItemPedidoCommand, bool>,
+    IRequestHandler<AtualizarItemPedidoCommand, bool>,
+    IRequestHandler<RemoverItemPedidoCommand, bool>,
+    IRequestHandler<AplicarVoucherPedidoCommand, bool>
 {
     private readonly IPedidoRepository _pedidoRepository;
     private readonly IMediatorHandler _mediatorHandler;
@@ -55,8 +59,24 @@ public class PedidoCommandHandler : IRequestHandler<AdicionarItemPedidoCommand, 
             pedido.AdicionarEvento(new PedidoAtualizadoEvent(pedido.ClientId, pedido.Id, pedido.ValorTotal));
         }
 
-        pedido.AdicionarEvento(new PedidoItemAdicionadoEvent(pedido.ClientId, pedido.Id, request.ProdutoId, request.Nome, request.ValorUnitario, request.Quantidade));
+        pedido.AdicionarEvento(new PedidoItemAdicionadoEvent(pedido.ClientId, pedido.Id, request.ProdutoId,
+            request.Nome, request.ValorUnitario, request.Quantidade));
         return await _pedidoRepository.UnitOfWork.Commit();
+    }
+
+    public async Task<bool> Handle(AtualizarItemPedidoCommand request, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<bool> Handle(RemoverItemPedidoCommand request, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<bool> Handle(AplicarVoucherPedidoCommand request, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
     }
 
     private bool ValidarComando(Command command)
